@@ -16,6 +16,7 @@
         <h2 class="display-5">Weather Dashboard</h2>
     </header>
 
+
     <!--start weather report-->
     <div class="container-fluid" style="margin-top:-31px">
         <div class="row">
@@ -43,8 +44,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 weatherReportBox">
+            <!--weather report for today on main card-->
+            <div class="row weather-row">
+                <div class="col-lg-9 weatherReportBox">
                     <div><span id="searchedCity"></span><span id="currentDate"></span><span
                             id="todayWeatherIcon"></span>
                     </div>
@@ -53,85 +55,58 @@
                     <div class="windspeedReturn"><span></span></div>
                     <div class="UVindexReturn"><span></span></div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="card" style="width: 16rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                <!--end weather report for today on main card-->
+
+                <!--date cards-->
+                <div class="row"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="date1"><span></span></h4>
+                            <p class="card-subtitle mb-2 text-muted" id="date1Icon">Icon</p>
+                            <p class="card-text" id="humidityReturn1">Humidity</p>
+                            <p class="card-text" id="tempReturn1">Temp</p>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="card" style="width: 16rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="date2"><span></span></h4>
+                            <p class="card-subtitle mb-2 text-muted"id="date2Icon">Icon</p>
+                            <p class="card-text" id="humidityReturn2">Humidity</p>
+                            <p class="card-text" id="tempReturn2">Temp</p>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="card" style="width: 16rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="date3"><span></span></h4>
+                            <p class="card-subtitle mb-2 text-muted" id="date3Icon">Icon</p>
+                            <p class="card-text" id="humidityReturn3">Humidity</p>
+                            <p class="card-text" id="tempReturn3">Temp</p>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="card" style="width: 16rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="date4"><span></span></h4>
+                            <p class="card-subtitle mb-2 text-muted" id="date4Icon">Icon</p>
+                            <p class="card-text" id="humidityReturn4">Humidity</p>
+                            <p class="card-text" id="tempReturn4">Temp</p>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="card" style="width: 16rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="date5"><span></span></h4>
+                            <p class="card-subtitle mb-2 text-muted" id="date5Icon">Icon</p>
+                            <p class="card-text" id="humidityReturn5">Humidity</p>
+                            <p class="card-text" id="tempReturn5">Temp</p>
                         </div>
                     </div>
-                    <div class="col-lg-2"></div>
-                    
                 </div>
-            
+                <!--end date cards-->
+            </div>
+            <!--end weather display section-->
         </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>

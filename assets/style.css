@@ -14,22 +14,35 @@
 .sidebar {
   position: relative;
   padding: 20px 40px 20px 10px;
-  height: 500px;
   background-color: #f5f5f5;
   border-right: 1px solid #eee;
-  }
+}
 
-.weatherReportBox {
-  margin: 15px 0 0 40px; 
-  border: #d3d3d3 solid 1px;
-  border-radius: 10px;
-  padding: 20px
+#searchedCity {
+  font-size: 25px;
 }
 
 .citiesList {
   margin-left: 15px;
 }
 
-#searchedCity {
-  font-size: 25px;
+.weatherReportBox {
+  margin: 15px 0 0 0;
+  height: 420px; 
+  width: 375px;
+  border: #d3d3d3 solid 1px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.weather-row {
+  margin-left: 20px;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  background-color: #007bff;
+  color: white;
+  margin: 15px 0 0 15px;
 }
