@@ -1,18 +1,9 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Homework 6 Weather Maker
+for this homework we had to use a weather api and make calls to it to retreive data from specific cities that the user requests
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+## Acceptance Criteria 
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
-
-## User Story
-
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
-## Acceptance Criteria
+below represents the acceptance criteria for the following assignment...
 
 ```
 GIVEN a weather dashboard with form inputs
@@ -31,16 +22,9 @@ THEN I am presented with the last searched city forecast
 ```
 
 The following image demonstrates the application functionality:
-
 ![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
 
-## Review
+## review of project
 
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+this project used api calls to retrieve city data and was constructed for week 6 of the Full stack coding bootcamp <br>
+URL: https://www.calvinjacobsen.github.io/CalvinJacobsen/Weather-Dashboard-/index.html
