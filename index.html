@@ -28,8 +28,9 @@
                             <label class="sr-only"></label>
                             <input class="form-control" id="cityRequest" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-primary mb-3"><svg xmlns="http://www.w3.org/2000/svg"
-                                width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <button type="submit" class="btn btn-primary mb-3" id="searchCity"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg></button>
@@ -47,18 +48,20 @@
             <!--weather report for today on main card-->
             <div class="row weather-row">
                 <div class="col-lg-9 weatherReportBox">
-                    <div><span id="searchedCity"></span><span id="currentDate"></span><span
+                    <div><span id="searchedCity"></span> <span id="currentDate"></span> <span
                             id="todayWeatherIcon"></span>
                     </div>
-                    <div class="tempReturn"><span></span></div>
-                    <div class="humidityReturn"><span></span></div>
-                    <div class="windspeedReturn"><span></span></div>
-                    <div class="UVindexReturn"><span></span></div>
+                    <div >
+                        <div id="tempReturn" class="lowerStats"><span></span></div>
+                        <div id="tempFeelReturn" class="lowerStats"><span></span></div>
+                        <div id="humidityReturn" class="lowerStats"><span></span></div>
+                        <div id="windspeedReturn" class="lowerStats"><span></span></div>
+                    </div>
                 </div>
                 <!--end weather report for today on main card-->
 
                 <!--date cards-->
-                <div class="row"> 
+                <div class="row">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title" id="date1"><span></span></h4>
@@ -70,7 +73,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title" id="date2"><span></span></h4>
-                            <p class="card-subtitle mb-2 text-muted"id="date2Icon">Icon</p>
+                            <p class="card-subtitle mb-2 text-muted" id="date2Icon">Icon</p>
                             <p class="card-text" id="humidityReturn2">Humidity</p>
                             <p class="card-text" id="tempReturn2">Temp</p>
                         </div>
@@ -105,6 +108,7 @@
             <!--end weather display section-->
         </div>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
