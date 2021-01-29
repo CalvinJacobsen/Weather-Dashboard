@@ -1,3 +1,7 @@
+
+//creating blank global variable for cities selected
+cityArray = []
+
 function searchCityWeather(city) {
 
     //https://api.openweathermap.org/data/2.5/weather?q=minneapolis&appid=51f135d6aef7ba347cdd9f32a30bebca
@@ -17,8 +21,8 @@ function searchCityWeather(city) {
         var weatherIcon = response.weather[0].icon;
         var weatherIconDesc = response.weather[0].description;
         $("#searchedCity").text(cityName);
-        $("#currentDate").text("("+currentDate+")");
-        $("#todayWeatherIcon").html("<img src=http://openweathermap.org/img/wn/" + weatherIcon +".png style='height:70px;' title='" + weatherIconDesc + "'>");
+        $("#currentDate").text("(" + currentDate + ")");
+        $("#todayWeatherIcon").html("<img src=http://openweathermap.org/img/wn/" + weatherIcon + ".png style='height:70px;' title='" + weatherIconDesc + "'>");
 
         //calculating temp
         var tempK = response.main.temp;
@@ -29,12 +33,12 @@ function searchCityWeather(city) {
         //remaining values input below
         var humidity = response.main.humidity;
         var windSpeed = response.wind.speed;
-        
+
         $("#tempReturn").text("Tempurature: " + tempF.toFixed(1) + " °F");
         $("#tempFeelReturn").text("Feels Like: " + tempFeelF.toFixed(1) + " °F");
         $("#humidityReturn").text("Humidity: " + humidity + "%");
         $("#windspeedReturn").text("Wind Speed: " + windSpeed + " MPH");
-        
+
         //secondary ajax call to get forcast cards
         var inputCityID = response.id;
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + inputCityID + "&appid=" + APIKey;
@@ -43,7 +47,7 @@ function searchCityWeather(city) {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            
+
             var DayCards = 6;
             var j = 0;
 
@@ -51,7 +55,7 @@ function searchCityWeather(city) {
 
                 //looping to get correct dates at time
                 var found = false;
-                
+
                 while (found != true) {
 
                     var date = response.list[j].dt_txt;
@@ -65,19 +69,18 @@ function searchCityWeather(city) {
                     }
                 }
 
-                var currentDate = moment().add(i,'day').format("M/DD/YYYY");
+                var currentDate = moment().add(i, 'day').format("M/DD/YYYY");
                 var weatherIcon = response.list[j].weather[0].icon;
                 var weatherIconDesc = response.list[j].weather[0].description;
                 var tempK = response.list[j].main.temp;
                 var tempF = (tempK - 273.15) * 1.80 + 32;
                 var humidity = response.list[j].main.humidity;
-                
+
                 //assigning values to specific cards
                 $("#date" + [i]).text(currentDate);
-                $("#date" + [i] + "Icon").html("<img src=http://openweathermap.org/img/wn/" + weatherIcon +".png style='height:45px;' title='" + weatherIconDesc + "'>");
+                $("#date" + [i] + "Icon").html("<img src=http://openweathermap.org/img/wn/" + weatherIcon + ".png style='height:45px;' title='" + weatherIconDesc + "'>");
                 $("#tempReturn" + [i]).text("Tempurature: " + tempF.toFixed(1) + " °F");
                 $("#humidityReturn" + [i]).text("Humidity: " + humidity + "%");
-                
 
             }
         });
@@ -90,10 +93,32 @@ function addCitytoObject() {
 
 }
 
-function createButton() {
-    
-    
+function createButton(city) {
+
+    // proper capitalizing
+    city = city.toLowerCase();
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+
+    if (cityArray.includes(city) == false) {
+
+        //appending to the list and cityArray
+        $("ul").append('<li class="list-group-item">' + city + '</li>');
+        cityArray.push(city);
+    }
+
 }
+
+
+$('#searchedCities').on('click', function (event) {
+
+    event.preventDefault();
+    inputCity = $(this).textContent;
+    console.log($(this).attr("id"));
+
+    searchCityWeather(inputCity);
+});
+
+
 
 
 
@@ -105,6 +130,7 @@ $("#searchCity").on("click", function (event) {
 
     // Running the searchBandsInTown function(passing in the artist as an argument)
     searchCityWeather(inputCity);
-    
+    createButton(inputCity);
+
 
 });
