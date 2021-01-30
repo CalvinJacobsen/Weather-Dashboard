@@ -138,7 +138,7 @@ function populateWeather(city) {
 
     //finding at which position the searched city is within the object // mainly for button click functionality
     for (var i = 0; i < existingEntries.length; i++) {
-        if (existingEntries[i].city = city) {
+        if (existingEntries[i].city == city) {
             var j = i;
         }
     }
@@ -149,7 +149,7 @@ function populateWeather(city) {
     $("#tempReturn").text("Tempurature: " + existingEntries[j].weather.temp + " °F");
     $("#tempFeelReturn").text("Feels Like: " + existingEntries[j].weather.tempFeel + " °F");
     $("#humidityReturn").text("Humidity: " + existingEntries[j].weather.humidity + "%");
-    $("#windspeedReturn").text("Wind Speed: " + existingEntries[j].weather.windSpeed + " MPH");
+    $("#windspeedReturn").text("Wind Speed: " + existingEntries[j].weather.windspeed + " MPH");
 
     DayCards = 5;
 
