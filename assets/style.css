@@ -12,8 +12,21 @@ body {
   
 }
 
+.clearButton {
+  color: white;
+  background-color: #007bff;
+  margin-left: 5px
+}
+.clearButton:hover {
+  background-color: rgb(231, 15, 62);
+}
+
 .btn-primary:hover {
   background-color: rgb(15, 83, 231);
+}
+
+li:hover {
+  background-color: rgb(214, 214, 214);
 }
 
 .sidebar {
@@ -29,7 +42,7 @@ body {
 
 .weatherReportBox {
   margin: 15px 0 0 0;
-  height: 380px; 
+  height: 390px; 
   width: 375px;
   border: #d3d3d3 solid 1px;
   border-radius: 10px;
@@ -54,5 +67,5 @@ body {
   width: 200px;
   background-color: #007bff;
   color: white;
-  margin: 15px 0 0 15px;
+  margin: 65px 0 0 15px;
 }
