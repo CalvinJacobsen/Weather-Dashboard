@@ -27,4 +27,4 @@ The following image demonstrates the application functionality:
 ## review of project
 
 this project used api calls to retrieve city data and was constructed for week 6 of the Full stack coding bootcamp <br>
-URL: https://calvinjacobsen.github.io/Weather-Dashboard-/index.html
+URL: https://calvinjacobsen.github.io/Weather-Dashboard/index.html
